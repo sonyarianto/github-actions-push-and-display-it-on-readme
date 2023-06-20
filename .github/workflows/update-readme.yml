@@ -15,7 +15,8 @@ jobs:
         
       - name: Construct the README
         run: |
-          echo "Content of `test.php` is:" >> README.md
+          echo "# github-actions-push-and-display-it-on-readme" > README.md
+          echo 'Content of `test.php` is:' >> README.md
           echo '```php' >> README.md
           cat test.php >> README.md
           echo '```' >> README.md
