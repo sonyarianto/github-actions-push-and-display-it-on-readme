@@ -1,0 +1,29 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'test.php'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Construct the README
+        run: |
+          echo "# github-actions-push-and-display-it-on-readme" >> README.md
+          echo "Content of `test.php` is:" >> README.md
+          echo "```php" >> README.md
+          cat test.php >> README.md
+
+      - name: Update README
+        run: |
+          git add README.md
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update README with test.php changes" || echo "No changes to commit"
+          git push
