@@ -19,6 +19,7 @@ jobs:
           echo "Content of `test.php` is:" >> README.md
           echo "```php" >> README.md
           cat test.php >> README.md
+          echo "```" >> README.md
 
       - name: Update README
         run: |
