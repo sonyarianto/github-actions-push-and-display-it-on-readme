@@ -3,3 +3,8 @@ Content of  is:
 ```php
 <?php phpinfo();
 ```
+Content of  is:
+```php
+<?php
+phpinfo();
+```
