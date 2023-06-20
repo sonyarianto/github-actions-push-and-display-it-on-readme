@@ -15,11 +15,10 @@ jobs:
         
       - name: Construct the README
         run: |
-          echo "# github-actions-push-and-display-it-on-readme" >> README.md
           echo "Content of `test.php` is:" >> README.md
-          echo "```php" >> README.md
+          # echo "```php" >> README.md
           cat test.php >> README.md
-          echo "```" >> README.md
+          # echo "```" >> README.md
 
       - name: Update README
         env:
